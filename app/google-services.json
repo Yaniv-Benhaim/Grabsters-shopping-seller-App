@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "307828267128",
+    "firebase_url": "https://bolt-b3e8c.firebaseio.com",
+    "project_id": "bolt-b3e8c",
+    "storage_bucket": "bolt-b3e8c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307828267128:android:42159c4d9439b76193b58d",
+        "android_client_info": {
+          "package_name": "tech.gamedev.bolt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307828267128-fg1refkisnpa3vgojpjio36k9pi66pcd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tech.gamedev.bolt",
+            "certificate_hash": "1972b4eb8bc910983f2cd15cbbe57bfb7763f5bf"
+          }
+        },
+        {
+          "client_id": "307828267128-4mc72mfmr9uojgubcd67ug4hgf7lb0r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfM-fmU1I_NSwkzjATYl6mE9RZACxosJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307828267128-1fnec6v122rnt2j6g8pvh7afqfl2k8v8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307828267128:android:77c8f5bbab6c4a4a93b58d",
+        "android_client_info": {
+          "package_name": "tech.gamedev.storemanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307828267128-4mc72mfmr9uojgubcd67ug4hgf7lb0r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfM-fmU1I_NSwkzjATYl6mE9RZACxosJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307828267128-1fnec6v122rnt2j6g8pvh7afqfl2k8v8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

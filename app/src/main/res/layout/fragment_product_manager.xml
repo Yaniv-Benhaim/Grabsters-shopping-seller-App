@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/LightBlueGrey"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.productmanager.ProductManagerFragment">
+
+    <LinearLayout
+
+        android:id="@+id/llLocationTextViews"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_margin="30dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+
+            android:id="@+id/tvStoreTitle"
+            android:layout_width="wrap_content"
+            android:textSize="32sp"
+            android:fontFamily="@font/camber_bold"
+            android:textColor="@color/WHITE"
+            android:layout_marginRight="5dp"
+            android:layout_height="wrap_content"
+            android:text="Product"/>
+
+        <TextView
+
+            android:id="@+id/tvDiscoverCity"
+            android:textSize="32sp"
+            android:fontFamily="@font/camber_bold"
+            android:textColor="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Overview"/>
+    </LinearLayout>
+
+
+
+    <!-- SEARCH VIEW-->
+    <androidx.appcompat.widget.SearchView
+        app:layout_constraintTop_toBottomOf="@id/llLocationTextViews"
+        android:id="@+id/storeSearchView"
+        android:layout_width="match_parent"
+        android:elevation="2dp"
+        android:layout_marginTop="20dp"
+        app:queryBackground="@null"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="wrap_content"
+        app:iconifiedByDefault="false"
+        app:queryHint="Search by name or brand..."
+        android:background="@drawable/search_background"/>
+
+
+
+
+    <org.angmarch.views.NiceSpinner
+        app:layout_constraintTop_toBottomOf="@id/storeSearchView"
+        android:id="@+id/productTypeSpinner"
+        android:gravity="left"
+        android:text="Categories"
+        android:fontFamily="@font/camber_bold"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProductManagerList"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/vBottomNavSize"
+        app:layout_constraintTop_toBottomOf="@id/productTypeSpinner"
+
+        />
+
+    <View
+        android:id="@+id/vBottomNavSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddProduct"
+        android:layout_width="wrap_content"
+        app:elevation="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="#121515"
+        android:elevation="0dp"
+        android:src="@drawable/ic_baseline_add_24"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:rippleColor="#B33939" />
+
+
+
+            <ScrollView
+                android:id="@+id/svAddProductContainer"
+                android:layout_width="match_parent"
+                android:elevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/llAddNewProductContainer"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="11dp"
+                    android:background="#EAEAEA"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivBtnBack"
+                        android:layout_margin="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_back_arrow"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="4"
+                        android:layout_height="wrap_content"
+                        android:text="Add new product"
+                        android:gravity="left"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/camber_bold"
+                        android:textSize="22sp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvIsForSale"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="30dp"
+                        android:textColor="@color/WHITE"
+                        android:text="For Sale"
+                        android:fontFamily="@font/camber_bold"
+                        android:background="@drawable/product_check_bg_selected"/>
+
+                    <TextView
+                        android:id="@+id/tvIsForRent"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textColor="@color/WHITE"
+                        android:text="For Rent"
+                        android:fontFamily="@font/camber_bold"
+                        android:background="@drawable/product_check_bg_not_selected"/>
+
+                    <TextView
+                        android:id="@+id/tvIsService"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/WHITE"
+                        android:layout_marginEnd="10dp"
+                        android:text="Service"
+                        android:fontFamily="@font/camber_bold"
+                        android:background="@drawable/product_check_bg_not_selected"/>
+
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp"
+                        android:layout_height="200dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:id="@+id/ivChooseImage1"
+                                android:layout_width="match_parent"
+                                android:elevation="2dp"
+                                android:layout_height="200dp"
+                                android:scaleType="centerCrop"
+                                />
+
+                            <ImageView
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                android:layout_margin="30dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/add_image_icon_round"
+                                android:scaleType="center"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+
+
+
+
+                <EditText
+                    android:id="@+id/etNewProductName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Product Name..."
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/camber_medium"
+                    />
+
+                <EditText
+                    android:id="@+id/etNewProductDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:hint="Product Description..."
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/camber_medium"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etNewProductStock"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="Stock..."
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/camber_medium"
+                        />
+
+                    <EditText
+                        android:id="@+id/etNewProductPrice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="Price..."
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/camber_medium"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etNewProductItemNumber"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="Item number..."
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/camber_medium"
+                        />
+
+                    <EditText
+                        android:id="@+id/etNewProductModel"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="Model..."
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/camber_medium"
+                        />
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/etNewProductCategory"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:hint="Category"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:fontFamily="@font/camber_medium"
+                            />
+
+
+                    </LinearLayout>
+
+
+
+
+
+                    <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_marginTop="50dp"
+                        android:id="@+id/btnSaveNewProduct"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_google_background"
+                        android:text="Save"/>
+                </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"/>
+                </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+

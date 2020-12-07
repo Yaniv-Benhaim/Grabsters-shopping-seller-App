@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/LightBlueGrey"
+    tools:context=".ui.login.LoginFragment">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:src="@drawable/business_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/ivLogo"
+        android:layout_marginTop="150dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/btnGoogleSignIn"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:elevation="4dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/btn_google_background"
+        android:layout_height="58dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="start|center_vertical"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/google_logo"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/continue_with_google"
+                android:gravity="start|center_vertical"
+                android:textSize="20sp"
+                android:fontFamily="@font/camber_bold"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/btnGoogleSignIn"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tvBtnLoginWithDifferentAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign in with a different account ?"/>
+
+
+
+    <!-- FIRST TIME USER SCREEN -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clFirstTimeUserScreen"
+        android:elevation="10dp"
+        android:visibility="gone"
+        android:background="@color/LightBlueGrey"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+
+        <TextView
+            android:id="@+id/tvCreateYourStore"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="64dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_your_store"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:fontFamily="@font/camber_bold"/>
+
+        <EditText
+            android:id="@+id/etFullName"
+            app:layout_constraintTop_toBottomOf="@id/tvCreateYourStore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/full_name"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"/>
+
+        <EditText
+            android:id="@+id/etPhoneNumber"
+            app:layout_constraintTop_toBottomOf="@id/etFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="@string/phone_number"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"/>
+
+        <EditText
+            android:id="@+id/etStoreName"
+            app:layout_constraintTop_toBottomOf="@id/etPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/store_name"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"/>
+
+        <org.angmarch.views.NiceSpinner
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/etStoreName"
+            android:id="@+id/chooseCategorySpinner"
+            android:gravity="start"
+            android:text="@string/store_category"
+            android:fontFamily="@font/camber_medium"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"/>
+
+
+
+        <org.angmarch.views.NiceSpinner
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/chooseCategorySpinner"
+            android:id="@+id/chooseCountrySpinner"
+            android:gravity="start"
+            android:text="@string/country"
+
+            android:fontFamily="@font/camber_medium"
+            android:textAlignment="textStart"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"/>
+
+
+
+        <EditText
+            android:id="@+id/etAdress"
+            app:layout_constraintTop_toBottomOf="@id/chooseCountrySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your adress"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:drawableLeft="@drawable/ic_baseline_location_on_24"
+            android:layout_marginTop="24dp"/>
+
+
+
+        <TextView
+            android:id="@+id/tvStoreAdress1"
+            app:layout_constraintTop_toBottomOf="@id/etAdress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tvStoreAdress2"
+            app:layout_constraintTop_toBottomOf="@id/tvStoreAdress1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"/>
+
+
+        <Button
+            android:id="@+id/btnCreateStore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:background="@drawable/btn_google_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/create_store"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- END FIRST TIME USER SCREEN -->
+
+    <!-- PLACE PICKER -->
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!-- END PLACE PICKER -->
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
